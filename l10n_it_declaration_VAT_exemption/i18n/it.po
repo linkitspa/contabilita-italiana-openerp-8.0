@@ -1,0 +1,73 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_it_declaration_VAT_exemption
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 15:16+0000\n"
+"PO-Revision-Date: 2015-03-24 16:00+0100\n"
+"Last-Translator: Elena Carlesso <ecarlesso@linkgroup.it>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"Language: it_IT\n"
+
+
+#. module: l10n_it_declaration_VAT_exemption
+#: view:res.partner:0
+#: view:account.invoice:0
+msgid "Managment VAT Exemption"
+msgstr "Gestione lettera di intento"
+
+
+#. module: l10n_it_declaration_VAT_exemption
+#: field:res.partner,declaration_exemption_vat:0
+#: field:account.invoice,declaration_exemption_vat:0
+msgid "N.Decl.VAT Exemption customer"
+msgstr "Nr.Dich.esenzione IVA cliente"
+
+#. module: l10n_it_declaration_VAT_exemption
+#: help:res.partner,declaration_exemption_vat:0
+#: help:account.invoice,declaration_exemption_vat:0
+msgid "Number Declaration VAT Exemption customer"
+msgstr "Numero dichiarazione esenzione IVA del cliente"
+
+#. module: l10n_it_declaration_VAT_exemption
+#: field:res.partner,protocol_declaration_exemption_vat:0
+#: field:account.invoice,protocol_declaration_exemption_vat:0
+msgid "Internal protocol VAT exemption"
+msgstr "Protocollo interno esenzione IVA"
+
+#. module: l10n_it_declaration_VAT_exemption
+#: help:res.partner,protocol_declaration_exemption_vat:0
+#: help:account.invoice,protocol_declaration_exemption_vat:0
+msgid "Number of internal protocol for the registration of the declaration of VAT exemption"
+msgstr "Numero di protocollo interno per la registrazione della dichiarazione di esenzione IVA"
+
+#. module: l10n_it_declaration_VAT_exemption
+#: field:res.partner,date_declaration_exemption_vat:0
+#: field:account.invoice,date_declaration_exemption_vat:0
+msgid "Declaration Date"
+msgstr "Data dichiarazione"
+
+#. module: l10n_it_declaration_VAT_exemption
+#: help:res.partner,date_declaration_exemption_vat:0
+#: help:account.invoice,date_declaration_exemption_vat:0
+msgid "Date of declaration of the customer for the VAT exemption"
+msgstr "Data della dichiarazione del cliente per l'esenzione IVA"
+
+#. module: l10n_it_declaration_VAT_exemption
+#: field:res.partner,date_internal_protocol_exemption_vat:0
+#: field:account.invoice,date_internal_protocol_exemption_vat:0
+msgid "Date internal protocol"
+msgstr "Data protocollo interno"
+
+#. module: l10n_it_declaration_VAT_exemption
+#: help:res.partner,date_internal_protocol_exemption_vat:0
+#: help:account.invoice,date_internal_protocol_exemption_vat:0
+msgid "Date of internal protocol for the registration of the declaration of VAT exemption"
+msgstr "Data del protocollo interno per la registrazione della dichiarazione di esenzione IVA"

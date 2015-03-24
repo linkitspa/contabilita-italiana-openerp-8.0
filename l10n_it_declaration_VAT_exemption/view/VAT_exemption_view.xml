@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="view_partner_form_declaration_VAT_exemption">
+            <field name="name">view.partner.form.declaration.VAT.exemption</field>
+            <field name="model">res.partner</field>
+            <!-- Inherits from base.view_partner_form -->
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                  <field name="credit_limit" position="after">
+                  <group string="Managment VAT Exemption" colspan="4">
+                                <field name="declaration_exemption_vat"/>
+                                <field name="protocol_declaration_exemption_vat"/>
+                                <field name="date_declaration_exemption_vat"/>
+                                <field name="date_internal_protocol_exemption_vat"/>
+                  </group>              
+                  </field>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="account_invoice_form_declaration_VAT_exemption">
+            <field name="name">account.invoice.form.declaration.VAT.exemption</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <field name="move_id" position="after">
+                     <group string="Managment VAT Exemption"  colspan="4">
+                         <field name="declaration_exemption_vat"  attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                         <field name="protocol_declaration_exemption_vat"   attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                         <field name="date_declaration_exemption_vat"  attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                         <field name="date_internal_protocol_exemption_vat"  attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                    </group>     
+                </field>
+            </field>
+        </record>
+        
+        
+
+    </data>
+</openerp>
+
+
+
+                   
