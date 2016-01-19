@@ -59,7 +59,7 @@ class account_invoice(models.Model):
         }
 
         result =  super(account_invoice, self).onchange_partner_id(type, partner_id,
-            date_invoice=False,payment_term=False, partner_bank_id=False, company_id=False)
+            date_invoice ,payment_term, partner_bank_id, company_id)
         valori=result.get('value',{})
 
         partner = self.env['res.partner'].browse(partner_id)
@@ -99,7 +99,8 @@ class stock_picking(osv.osv):
     _inherit = "stock.picking"
 
     def action_invoice_create(self, cr, uid, ids, journal_id=False, group=False, type='out_invoice', context=None):
-        res=super(stock_picking, self).action_invoice_create(cr, uid, ids, journal_id=journal_id, group=group, type='out_invoice', context=context)
+        res = super(stock_picking, self).action_invoice_create(
+            cr, uid, ids, journal_id, group, type, context)
         for id_invoice in res:
             invoice = self.pool.get('account.invoice').browse(cr, uid, id_invoice)
             vals={}
