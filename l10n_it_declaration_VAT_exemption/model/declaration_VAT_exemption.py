@@ -128,7 +128,8 @@ class sale_order(osv.osv):
     #fatturazione da ordine di vendita
 
     def _prepare_invoice(self, cr, uid, order, lines, context=None):
-
+        invoice_vals=super(sale_order, self)._prepare_invoice( cr, uid, order, lines, context)
+        
         partner = self.pool.get('res.partner').browse(cr, uid, invoice_vals['partner_id'])
         if partner.parent_id:
             partner = partner.parent_id
