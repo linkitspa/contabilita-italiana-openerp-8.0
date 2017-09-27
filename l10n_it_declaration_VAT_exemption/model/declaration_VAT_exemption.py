@@ -53,8 +53,8 @@ class account_invoice(models.Model):
             'payment_term': False,
             'declaration_exemption_vat': '',
             'protocol_declaration_exemption_vat': '',
-            'date_declaration_exemption_vat': '',
-            'date_internal_protocol_exemption_vat': '',
+            'date_declaration_exemption_vat': False,
+            'date_internal_protocol_exemption_vat': False,
             }
         }
 
@@ -65,22 +65,15 @@ class account_invoice(models.Model):
         partner = self.env['res.partner'].browse(partner_id)
         if partner.parent_id:
             partner = partner.parent_id
-        if partner.declaration_exemption_vat:
-            valori['declaration_exemption_vat']=partner.declaration_exemption_vat
-        else:
-            valori['declaration_exemption_vat']=''
-        if partner.protocol_declaration_exemption_vat:
-            valori['protocol_declaration_exemption_vat']=partner.protocol_declaration_exemption_vat
-        else:
-            valori['protocol_declaration_exemption_vat']=''
-        if partner.date_declaration_exemption_vat:
-            valori['date_declaration_exemption_vat']=partner.date_declaration_exemption_vat
-        else:
-            valori['date_declaration_exemption_vat']=''
-        if partner.date_internal_protocol_exemption_vat:
-            valori['date_internal_protocol_exemption_vat']=partner.date_internal_protocol_exemption_vat
-        else:
-            valori['date_internal_protocol_exemption_vat']=''
+        
+        valori['declaration_exemption_vat']=(
+            partner.declaration_exemption_vat and partner.declaration_exemption_vat or '')
+        valori['protocol_declaration_exemption_vat']=(
+            partner.protocol_declaration_exemption_vat and partner.protocol_declaration_exemption_vat or '')
+        valori['date_declaration_exemption_vat']=(
+            partner.date_declaration_exemption_vat and partner.date_declaration_exemption_vat or False)
+        valori['date_internal_protocol_exemption_vat']=(
+            partner.date_internal_protocol_exemption_vat and partner.date_internal_protocol_exemption_vat or False)
         return {'value': valori}
 
 
